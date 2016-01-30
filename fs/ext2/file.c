@@ -25,6 +25,8 @@
 #include "xattr.h"
 #include "acl.h"
 
+// Adding new system call
+// Adding counters
 int global_ext2_fsync_counter = 0;
 int global_ext2_fsync_increment = 1;
 
@@ -49,7 +51,7 @@ int ext2_fsync(struct file *file, loff_t start, loff_t end, int datasync)
 	struct super_block *sb = file->f_mapping->host->i_sb;
 	struct address_space *mapping = sb->s_bdev->bd_inode->i_mapping;
 
-        // printk(KERN_EMERG "***** This is a debug message from ext2_fsync");
+        // Addng new system call
         printk(KERN_INFO "***** This is a debug message from ext2_fsync\n");
         global_ext2_fsync_counter = global_ext2_fsync_counter + global_ext2_fsync_increment;
 
